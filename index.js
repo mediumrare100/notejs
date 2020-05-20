@@ -1,7 +1,10 @@
 var express = require('express')
-var app = express()
+var path=require('path')
 
+var app = express()
+//extrem wichtig fuer heroku
 app.set('port', (process.env.PORT || 5000))
+
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
